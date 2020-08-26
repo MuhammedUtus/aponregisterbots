@@ -111,7 +111,12 @@ exports.run = async(client, message, args) => {
 `)
 .setTimestamp()
 .setThumbnail(client.user.avatarURL)
-client.channels.get(modlog).send(yar)
+   let channel = db.fetch(`isimkayıtlog.${message.guild.id}`)
+   if (!channel) return;
+   else if (channel === "none") return;
+   let log = message.guild.channels.get(channel)
+   
+   return log.send({embed: yar}) 
   db.add(`erkekpuan_${message.guild.id}_${message.author.id}`, 1);
   db.add(`toplamkayıt.${message.guild.id}_${message.author.id}`, 1);
   db.push(`isimler1.${message.guild.id}_${kisi.id}`, isim)

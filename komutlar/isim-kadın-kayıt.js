@@ -111,8 +111,6 @@ exports.run = async(client, message, args) => {
 .setTimestamp()
 .setThumbnail(client.user.avatarURL)
    let channel = db.fetch(`isimkayıtlog.${message.guild.id}`)
-   if (!channel) return;
-   else if (channel === "none") return;
    let log = message.guild.channels.get(channel)
    
    return log.send({embed: yar}) 
