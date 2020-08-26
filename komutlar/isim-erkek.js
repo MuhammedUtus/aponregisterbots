@@ -111,8 +111,7 @@ exports.run = async(client, message, args) => {
 `)
 .setTimestamp()
 .setThumbnail(client.user.avatarURL)
-   let channel = message.guild.channels.get(modlog.id)
-channel.send(yar)
+client.channels.get(modlog).send(yar)
   db.add(`erkekpuan_${message.guild.id}_${message.author.id}`, 1);
   db.add(`toplamkayıt.${message.guild.id}_${message.author.id}`, 1);
   db.push(`isimler1.${message.guild.id}_${kisi.id}`, isim)

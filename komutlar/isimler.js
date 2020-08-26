@@ -3,8 +3,7 @@ const db = require('quick.db');
 
 exports.run = async (client, message, args, params) => { 
 	var user = message.mentions.users.first() || message.client.users.get(args[0]) || message.client.users.find(m => m.username === args.slice(0).join(" "))
-    const member = message.guild.member(user)
-let kisi = client.users.get(member.id);
+    const kisi = message.guild.member(user)
 let filtre = await db.fetch(`isimler1.${message.guild.id}_${kisi.id}`)
 let filtre2 = await db.fetch(`isimler2.${message.guild.id}_${kisi.id}`)
 let yetkili = await db.fetch(`isimyetkiliRol.${message.guild.id}`);
