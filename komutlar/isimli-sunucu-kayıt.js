@@ -40,7 +40,7 @@ Bu komutla tüm sistemler kapanır.
 :white_small_square: - **Örnek Kadın komut kullanım:** \`${prefix}isim-kadın @etiket İsim Yaş\`
   
 `)
-.setFooter(`${message.author.tag} Tarafından istendi!`,  message.author.avatarURL)
+.setFooter(`${message.author.tag} Tarafından istendi! - Gnarge 2020`,  message.author.avatarURL)
 .setThumbnail(message.author.avatarURL)
 .setColor('#F3EF0B')
     .setTimestamp()
@@ -52,6 +52,7 @@ exports.conf = {
   aliases: ['isimlikayıt','isimlikayıtsistemi','isimkayıtsistem','isim-kayıt-sistem'],
   permLevel: 0
 };
+//EMİRHAN SARAÇ
 
 exports.help = {
   name: 'isimli-kayıt-sistemi',

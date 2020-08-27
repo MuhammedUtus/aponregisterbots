@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const db = require('quick.db');
+//EMİRHAN SARAÇ
 
 
 exports.run = async (client, message, params, args) => {
@@ -23,10 +24,13 @@ exports.run = async (client, message, params, args) => {
     .setDescription(`Erkek rolü başarıyla verilerden silindi!`)
     .setTimestamp()
     .setColor("GREEN")
-    
+    //EMİRHAN SARAÇ
+
      return message.channel.send(embed)
-    
+    //EMİRHAN SARAÇ
+
 };
+//EMİRHAN SARAÇ
 
 exports.conf = {
   kategori: 'ayarlar',
@@ -38,4 +42,4 @@ exports.help = {
  name: 'isim-erkek-role-kapat',
  description: 'Sayaçı kapatırsınız.',
  usage: 'sayaç'
-};
+};//EMİRHAN SARAÇ

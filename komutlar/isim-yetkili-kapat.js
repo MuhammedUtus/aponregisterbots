@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const db = require('quick.db');
 
+//EMİRHAN SARAÇ
 
 exports.run = async (client, message, params, args) => {
    	          const ayarlar = require('../ayarlar.json')
@@ -17,6 +18,7 @@ exports.run = async (client, message, params, args) => {
                        return message.channel.send(hata)
                          }
     db.delete(`isimyetkiliRol.${message.guild.id}`)
+//EMİRHAN SARAÇ
 
     const embed = new Discord.RichEmbed()
     .setAuthor(`Başarılı!`, message.author.avatarURL)
@@ -25,7 +27,8 @@ exports.run = async (client, message, params, args) => {
     .setColor("GREEN")
     
      return message.channel.send(embed)
-    
+    //EMİRHAN SARAÇ
+
 };
 
 exports.conf = {

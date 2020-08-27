@@ -9,13 +9,16 @@ exports.run = async (client, message, params, args) => {
                     if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('Bu komutu kullanabilmek için "Sunucuyu Yönet" Yetkisine Sahip Olmalısın!')  
                     let özellik = await db.fetch(`isimkayıtsızRol.${message.guild.id}`);
                     if(!özellik) {
-                       const hata = new Discord.RichEmbed()
+     //EMİRHAN SARAÇ
+                  const hata = new Discord.RichEmbed()
                        .setAuthor('HATA', message.author.avatarURL)
-                       .setDescription(`Kayıtsız rolü zaten ayarlanmamış bu yüzden kapatamazsın!`) 
+            //EMİRHAN SARAÇ
+           .setDescription(`Kayıtsız rolü zaten ayarlanmamış bu yüzden kapatamazsın!`) 
                        .setColor('RED')
                        .setTimestamp()
                        return message.channel.send(hata)
-                         }
+          //EMİRHAN SARAÇ
+               }
     db.delete(`isimkayıtsızRol.${message.guild.id}`)
 
     const embed = new Discord.RichEmbed()
@@ -23,7 +26,8 @@ exports.run = async (client, message, params, args) => {
     .setDescription(`Kayıtsız rolü başarıyla silindi!`)
     .setTimestamp()
     .setColor("GREEN")
-    
+    //EMİRHAN SARAÇ
+
      return message.channel.send(embed)
     
 };

@@ -10,6 +10,7 @@ var prefix = ayarlar.prefix;
 
 require("./util/eventLoader")(client);
 
+//EMİRHAN SARAÇ
 
 //var prefix = ayarlar.prefix;
 
@@ -27,6 +28,7 @@ client.on("ready", async () => {
     )} ${chalk.yellow("Kullanıcı'ya")} ${chalk.red("hizmet veriyor!")}`
   );
 });
+//EMİRHAN SARAÇ
 
 client.on('guildMemberAdd', async (member, guild, message) => {
 
@@ -43,6 +45,7 @@ client.on('guildMemberAdd', async (member, guild, message) => {
      });
 /////////////////////////////
 
+//EMİRHAN SARAÇ
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
@@ -89,6 +92,7 @@ client.reload = command => {
     }
   });
 };
+//EMİRHAN SARAÇ
 
 client.load = command => {
   return new Promise((resolve, reject) => {
@@ -105,6 +109,7 @@ client.load = command => {
     }
   });
 };
+//EMİRHAN SARAÇ
 
 client.unload = command => {
   return new Promise((resolve, reject) => {
@@ -121,6 +126,7 @@ client.unload = command => {
     }
   });
 };
+//EMİRHAN SARAÇ
 
 client.elevation = message => {
   if(!message.guild) {
@@ -136,6 +142,7 @@ client.elevation = message => {
   return permlvl;
 };
 
+//EMİRHAN SARAÇ
 
 
 client.login(ayarlar.token)

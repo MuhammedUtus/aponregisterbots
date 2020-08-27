@@ -1,6 +1,7 @@
-const Discord = require('discord.js')
-const db = require('quick.db');
+const emirhan = require('discord.js')
+const sarac = require('quick.db');
 const ayarlar = require('../ayarlar.json')
+//EMİRHAN SARAÇ
 
 exports.run = async (client, message, args) => {
       let prefix = await require('quick.db').fetch(`prefix.${message.guild.id}`) || ayarlar.prefix
@@ -11,32 +12,35 @@ exports.run = async (client, message, args) => {
   let newRole;
   let tworole;
   if (!rol) {
-    const hata = new Discord.RichEmbed()
+    const hata = new emirhan.RichEmbed()
     .setAuthor('HATA', message.author.avatarURL)
     .setDescription(`Rol belirtmeniz gerekiyor! \n\n**Örnek Kullanım:** \n\`\`\`${prefix}isim-kayıtsız-role @roletiket\`\`\``) 
     .setColor('RED')
     .setTimestamp()
     return message.channel.send(hata)
-      }
+      }//EMİRHAN SARAÇ
+
   else newRole = message.mentions.roles.first().id
   let isim = message.mentions.roles.first().name  
-    db.set(`kayıtisim.${message.guild.id}`, isim)
-  let otorol = await db.set(`isimkayıtsızRol.${message.guild.id}`, newRole)
+    sarac.set(`kayıtisim.${message.guild.id}`, isim)
+  let otorol = await sarac.set(`isimkayıtsızRol.${message.guild.id}`, newRole)
   if (!message.guild.roles.get(newRole)){
-    const hata = new Discord.RichEmbed()
+    const hata = new emirhan.RichEmbed()
     .setAuthor('HATA', message.author.avatarURL)
     .setDescription(`Etiketlediğiniz rol bulunamadı, etiketlediğiniz rolün etiketlenebilirliğinin aktif olduğundan emin olunuz`) 
     .setColor('RED')
     .setTimestamp()
     return message.channel.send(hata)
-      } 
-const embed = new Discord.RichEmbed()
+      } //EMİRHAN SARAÇ
+
+const embed = new emirhan.RichEmbed()
 .setAuthor(`Başarılı!`, message.author.avatarURL)
 .setDescription(`İsim kayıt sisteminde kullanılacak olan **kayıtsız** rolü: <@&${newRole}> olarak seçildi!`)
 .setTimestamp()
 .setColor("GREEN")
 
  return message.channel.send(embed)
+//EMİRHAN SARAÇ
 
 };
   

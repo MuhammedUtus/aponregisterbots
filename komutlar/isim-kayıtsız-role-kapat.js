@@ -10,22 +10,26 @@ exports.run = async (client, message, params, args) => {
                     let özellik = await db.fetch(`isimkayıtsızRol.${message.guild.id}`);
                     if(!özellik) {
                        const hata = new Discord.RichEmbed()
-                       .setAuthor('HATA', message.author.avatarURL)
+          //EMİRHAN SARAÇ
+             .setAuthor('HATA', message.author.avatarURL)
                        .setDescription(`Kayıtsız rolü zaten ayarlanmamış bu yüzden kapatamazsın!`) 
                        .setColor('RED')
                        .setTimestamp()
                        return message.channel.send(hata)
                          }
     db.delete(`isimkayıtsızRol.${message.guild.id}`)
+//EMİRHAN SARAÇ
 
     const embed = new Discord.RichEmbed()
     .setAuthor(`Başarılı!`, message.author.avatarURL)
     .setDescription(`Kayıtsız rolü başarıyla verilerden silindi!`)
     .setTimestamp()
     .setColor("GREEN")
-    
+    //EMİRHAN SARAÇ
+
      return message.channel.send(embed)
-    
+    //EMİRHAN SARAÇ
+
 };
 
 exports.conf = {

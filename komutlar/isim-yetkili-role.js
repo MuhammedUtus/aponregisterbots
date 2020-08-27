@@ -1,9 +1,10 @@
-const Discord = require('discord.js')
-const db = require('quick.db');
+const emirhan = require('discord.js')
+const sarac = require('quick.db');
 const ayarlar = require('../ayarlar.json')
 
 exports.run = async (client, message, args) => {
       let prefix = await require('quick.db').fetch(`prefix.${message.guild.id}`) || ayarlar.prefix
+//EMİRHAN SARAÇ
 
     if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('Bu komutu kullanabilmek için "Sunucuyu Yönet" Yetkisine Sahip Olmalısın!')  
 
@@ -11,34 +12,37 @@ exports.run = async (client, message, args) => {
   let newRole;
   let tworole;
   if (!rol){
-    const hata = new Discord.RichEmbed()
+    const hata = new emirhan.RichEmbed()
     .setAuthor('HATA', message.author.avatarURL)
     .setDescription(`Rol belirtmeniz gerekiyor! \n\n**Örnek Kullanım:** \n\`\`\`${prefix}isim-yetkili-role @roletiket\`\`\``) 
     .setColor('RED')
     .setTimestamp()
     return message.channel.send(hata)
-      }
+      }//EMİRHAN SARAÇ
+
   else newRole = message.mentions.roles.first().id
   let isim = message.mentions.roles.first().name  
-    db.set(`kayıtisim.${message.guild.id}`, isim)
-  let otorol = await db.set(`isimyetkiliRol.${message.guild.id}`, newRole)
+    sarac.set(`kayıtisim.${message.guild.id}`, isim)
+  let otorol = await sarac.set(`isimyetkiliRol.${message.guild.id}`, newRole)
   if (!message.guild.roles.get(newRole)) {
-    const hata = new Discord.RichEmbed()
+    const hata = new emirhan.RichEmbed()
     .setAuthor('HATA', message.author.avatarURL)
-    .setDescription(`Etiketlediğiniz rol bulunamadı, etiketlediğiniz rolün etiketlenebilirliğinin aktif olduğundan emin olunuz`) 
+    .setDescription(`Etiketlediğiniz rol bulunamadı, etiketlediğiniz rolün etiketlenebilirliğinin aktif olduğundan emin olunuz- Gnarge 2020`) 
     .setColor('RED')
     .setTimestamp()
     return message.channel.send(hata)
       } 
-const embed = new Discord.RichEmbed()
+const embed = new emirhan.RichEmbed()
 .setAuthor(`Başarılı!`, message.author.avatarURL)
-.setDescription(`İsim kayıt sistemin de kullanılacak olan **yetkili** rolü <@&${newRole}> olarak seçildi!`)
+.setDescription(`İsim kayıt sistemin de kullanılacak olan **yetkili** rolü <@&${newRole}> olarak seçildi! - Gnarge 2020`)
 .setTimestamp()
 .setColor("GREEN")
+//EMİRHAN SARAÇ
 
  return message.channel.send(embed)
 
-};
+};//EMİRHAN SARAÇ
+
   
   
     

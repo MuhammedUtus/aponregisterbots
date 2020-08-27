@@ -7,6 +7,7 @@ exports.run = async (client, message, params, args) => {
 				    let prefix = await require('quick.db').fetch(`prefix.${message.guild.id}`) || ayarlar.prefix
 
                     if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('Bu komutu kullanabilmek için "Sunucuyu Yönet" Yetkisine Sahip Olmalısın!')  
+//EMİRHAN SARAÇ
 
     db.delete(`isimerkekRol.${message.guild.id}`)
     db.delete(`isimkadınRol.${message.guild.id}`)
@@ -18,10 +19,12 @@ exports.run = async (client, message, params, args) => {
     .setDescription(`Tüm ayarlar kapatıldı!`)
     .setTimestamp()
     .setColor("GREEN")
-    
+    //EMİRHAN SARAÇ
+
      return message.channel.send(embed)
     
 };
+//EMİRHAN SARAÇ
 
 exports.conf = {
   kategori: 'ayarlar',

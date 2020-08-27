@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const db = require('quick.db')
 const ms = require("ms");
-const { MembershipStates } = require('discord.js/src/util/Constants');
+//EMİRHAN SARAÇ
 
 
 exports.run = async(client, message, args) => {
@@ -86,13 +86,14 @@ exports.run = async(client, message, args) => {
   \`\`\`${isim} ${yaş} Olarak Kayıt Edildin!\`\`\`
   `)
   .setColor("GREEN")
-    .setFooter(`Komutu kullanan yetkili : ${message.author.username}`)  
+    .setFooter(`Komutu kullanan yetkili : ${message.author.username} - Gnarge 2020`)  
   .setThumbnail(client.user.avatarURL)
   message.channel.send(embed22)
   message.guild.members.get(kisi.id).setNickname(`${isim} ${yaş}`)
     kisi.addRole(mutel).then(y => y.removeRole(kayitsiz))
 
   db.add(`kadınpuan_${message.guild.id}_${message.author.id}`, 1);
+//EMİRHAN SARAÇ
 
 };
 

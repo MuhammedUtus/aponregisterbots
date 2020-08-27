@@ -3,6 +3,7 @@ const db = require("quick.db");
 const ayarlar = require("../ayarlar.json")
 exports.run = async(client, message, args) => {
 				    let prefix = await require('quick.db').fetch(`prefix.${message.guild.id}`) || ayarlar.prefix
+//EMİRHAN SARAÇ
 
   const user = message.mentions.users.first() || message.author;
   if (!user)
@@ -17,7 +18,8 @@ exports.run = async(client, message, args) => {
   let kız = db.get(`kadınpuan_${message.guild.id}_${user.id}`);
 
   message.channel.send(`${user} Adlı Kullanıcı Bu Sunucuda: \n\n**Toplam \`  ${kız || "0"}  \` Kadın Kaydetmiş!** \n**Toplam \`  ${erkek || "0"}  \`  Erkek Kaydetmiş!** `);
-};
+};//EMİRHAN SARAÇ
+
 exports.conf = {
   enabled: true,
   guildOnly: false,
@@ -30,3 +32,4 @@ exports.help = {
 description: "Yetkililer hakkında bilgi verir.",
 type: "Yapılandırma"
 };
+//EMİRHAN SARAÇ
