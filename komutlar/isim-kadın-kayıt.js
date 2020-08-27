@@ -91,33 +91,8 @@ exports.run = async(client, message, args) => {
   message.channel.send(embed22)
   message.guild.members.get(kisi.id).setNickname(`${isim} ${yaş}`)
     kisi.addRole(mutel).then(y => y.removeRole(kayitsiz))
-    const number = await db.fetch(`isimkayıtlog.${message.guild.id}`)
-    if (number === null) db.set(`isimkayıtlog.${message.guild.id}`, 0)
-    db.add(`isimkayıtlog.${message.guild.id}`, 1)
-    const num = await db.fetch(`isimkayıtlog.${message.guild.id}`)
-    
-    db.set(`isiiimkayıt.${message.guild.id}.${num}`, {
-      moderator: `${message.author.tag}`,
-      action: 'Register4',
-      user: `(${kisi.id}) ${kisi.tag}`
-    }) 
 
-    const yar = new Discord.RichEmbed()
-    .setTitle(`İsim Kayıt Log - #${num}`)
-.setDescription(`
-**Kayıt Edilen Kullanıcı:** ${kisi}
-**Kullanıcıyı Kayıt Eden Kullanıcı**:  <@!${message.author.id}>
-`)
-.setTimestamp()
-.setThumbnail(client.user.avatarURL)
-   let channel = db.fetch(`isimkayıtlog.${message.guild.id}`)
-   let log = message.guild.channels.get(channel)
-   
-   return log.send({embed: yar}) 
   db.add(`kadınpuan_${message.guild.id}_${message.author.id}`, 1);
-  db.add(`toplamkayıt.${message.guild.id}_${message.author.id}`, 1);
-  db.push(`isimler1.${message.guild.id}`, isim)
-  db.push(`isimler2.${message.guild.id}`, yaş)
 
 };
 

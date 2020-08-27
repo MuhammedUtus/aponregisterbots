@@ -1,3 +1,4 @@
+
 const ayarlar = require('../ayarlar.json');
 const Discord = require('discord.js');
 const db = require('quick.db');
