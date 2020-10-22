@@ -102,7 +102,7 @@ exports.run = async(client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['isim-kadın','fksafjasl'],
+  aliases: ['isim-kadın','k'],
   permLevel: 0
 };
 

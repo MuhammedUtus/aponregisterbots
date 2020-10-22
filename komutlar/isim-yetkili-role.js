@@ -56,5 +56,5 @@ exports.conf = {
 exports.help = {
     name: 'isim-yetkili-role',
     description: 'Sunucuya giren kullanıcıya seçtiğiniz rolü otomatik verir.',
-    usage: 'teyit-kayıtsız-rol'
+    usage: 'teyit-yetkili-rol'
 }
