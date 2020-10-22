@@ -44,5 +44,5 @@ exports.conf = {
 exports.help = {
   name: 'isim-erkek-role',
   description: 'Kişi susturulunca verilecek rolü ayarlarsınız.',
-  usage: 'mute-rol',
+  usage: 'e',
 };//EMİRHAN SARAÇ
