@@ -86,7 +86,7 @@ exports.run = async(client, message, args) => {
   \`\`\`${isim} ${yaş} Olarak Kayıt Edildin!\`\`\`
   `)
   .setColor("GREEN")
-    .setFooter(`Komutu kullanan yetkili : ${message.author.username} - Gnarge 2020`)  
+    .setFooter(`Komutu kullanan yetkili : ${message.author.username} - Apon Register © 2020`)  
   .setThumbnail(client.user.avatarURL)
   message.channel.send(embed22)
   message.guild.members.get(kisi.id).setNickname(`${isim} ${yaş}`)
